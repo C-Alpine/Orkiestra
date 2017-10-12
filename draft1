@@ -1,16 +1,22 @@
 <?php
 try {
-
+  /* zmienne dany bazych */
   $host = 'localhost';
   $db_user ='root';
   $db_password ='';
   $db_name = 'orkiestra';
 
- $db = new PDO("mysql:host=$host;dbname=$db_name",$db_user, $db_password);
+ $db = new PDO("mysql:host=$host;dbname=$db_name",$db_user, $db_password); /* podlaczenie do bazy danych */
 }
 catch(PDOException $e) {
  echo $e->getMessage();
 }
+
+// koniec polaczenia z PDO
+
+
+
+
 $statement = $db->query("SELECT * FROM users");
 
  foreach($statement as $wiersz) {
